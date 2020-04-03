@@ -26,7 +26,7 @@ def price_handler(update, context):
     elif symbol not in constants.SUPPORTED_SYMBOLS:
         context.bot.send_message(chat_id=update.effective_chat.id, text=symbol + " is not supported.")
         return
-    text = "Current {} price is: ${:.2f}".format(symbol, get_price(symbol))
+    text = "Current {} price is: ${:.2f}".format(symbol, float(get_price(symbol)))
     context.bot.send_message(chat_id=update.effective_chat.id, text=text)
 
 
