@@ -12,7 +12,6 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 def run_bot(args):
     updater = Updater(token=args.bot_token, use_context=True)
     bot = updater.bot
-    job_queue = updater.job_queue
     logging.info(f'Started {bot.first_name} bot, bot username: {bot.username}')
     dispatcher = updater.dispatcher
 
@@ -20,7 +19,7 @@ def run_bot(args):
     dispatcher.add_handler(CommandHandler('help', handlers.help_handler))
     dispatcher.add_handler(CommandHandler('price', handlers.price_handler))
     dispatcher.add_handler(CommandHandler('alarmstart', handlers.callback_timer))
-    dispatcher.add_handler(CommandHandler('alarmstop', handlers.stop_timer))
+    dispatcher.add_handler(CommandHandler('alarmstop', handlers.stop_alarm))
     dispatcher.add_handler(CommandHandler('change', handlers.change_handler))
     updater.start_polling()
 
