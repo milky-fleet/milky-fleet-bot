@@ -13,12 +13,20 @@ SUPPORTED_SYMBOLS = {'NIO', 'BGN', 'GMD', 'YER', 'MGA', 'SAR', 'CVE', 'REP', 'HN
                      'SVC', 'PLN', 'TJS', 'CLP', 'RWF', 'PKR', 'SRD', 'MOP', 'MXN', 'LBP', 'BSV', 'CNH', 'DKK', 'ERN',
                      'MTL', 'CHF', 'BCH', 'BWP', 'JPY', 'IMP', 'MVR', 'OMR', 'SAI'}
 
-SUPPORTED_GRANULARITY = {
-    '60': 'one minute', 
-    '300': 'five minutes',
-    '900': 'fifteen minutes',
-    '3600': 'one hour',
-    '21600': 'six hours',
-    '86400': 'one day'
+SUPPORTED_GRANULARITY_WORD = {
+    60: 'one minute', 
+    300: 'five minutes',
+    900: 'fifteen minutes',
+    3600 : 'one hour',
+    21600 : 'six hours',
+    86400 : 'one day'
 }
 
+SUPPORTED_GRANULARITY_NUMBER = {
+    '1m': 60, 
+    '5m': 300,
+    '15m': 900,
+    '1h': 3600,
+    '6h': 21600,
+    '1d': 86400
+}
